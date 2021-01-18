@@ -25,9 +25,9 @@ class Student
     DB[:conn].execute(sql)
   end
 
-  def save(name, grade)
+  def save
     sql = <<-SQL
-      INSERT INTO students (name, grade) VALUES (name, grade)
+      INSERT INTO students (name, grade) VALUES (@name, @grade)
       SQL
     DB[:conn].execute(sql)
   end
